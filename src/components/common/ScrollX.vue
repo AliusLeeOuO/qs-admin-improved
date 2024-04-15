@@ -6,7 +6,7 @@ interface Props {
 }
 
 withDefaults(defineProps<Props>(), {
-  showArrow: true,
+  showArrow: true
 })
 
 const translateX = ref(0)

@@ -18,7 +18,7 @@ export function createPermissionGuard(router: Router) {
     if (to.path === '/login')
       return { path: '/' }
 
-    refreshAccessToken()
+    await refreshAccessToken()
     return true
   })
 }

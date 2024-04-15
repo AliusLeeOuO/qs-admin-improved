@@ -14,7 +14,7 @@ export const useThemeStore = defineStore('theme-store', {
     },
     naiveTheme(): BuiltInGlobalTheme | undefined {
       return this.darkMode ? darkTheme : undefined
-    },
+    }
   },
   actions: {
     setIsMobile(isMobile: boolean) {
@@ -39,6 +39,6 @@ export const useThemeStore = defineStore('theme-store', {
     /** 设置主题色 */
     setPrimaryColor(color: string) {
       this.primaryColor = color
-    },
-  },
+    }
+  }
 })

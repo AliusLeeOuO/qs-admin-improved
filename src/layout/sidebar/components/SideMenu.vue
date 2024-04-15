@@ -47,7 +47,7 @@ function getMenuItem(route: RouteType, basePath = ''): MenuItem {
     key: route.name,
     path: resolvePath(basePath, route.path),
     icon: getIcon(route.meta),
-    order: route.meta?.order || 0,
+    order: route.meta?.order || 0
   }
 
   const visibleChildren = route.children ? route.children.filter((item: RouteType) => item.name && !item.isHidden) : []
@@ -63,7 +63,7 @@ function getMenuItem(route: RouteType, basePath = ''): MenuItem {
       key: singleRoute.name,
       path: resolvePath(menuItem.path, singleRoute.path),
       icon: getIcon(singleRoute.meta),
-      order: menuItem.order,
+      order: menuItem.order
     }
     const visibleItems = singleRoute.children ? singleRoute.children.filter((item: RouteType) => item.name && !item.isHidden) : []
 

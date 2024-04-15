@@ -18,7 +18,7 @@ watch(
         window.localStorage.setItem('__THEME_COLOR__', common[key as ThemeVarsKeys] || '')
     }
   },
-  { immediate: true },
+  { immediate: true }
 )
 
 watch(
@@ -30,8 +30,8 @@ watch(
       document.documentElement.classList.remove('dark')
   },
   {
-    immediate: true,
-  },
+    immediate: true
+  }
 )
 
 function handleWindowResize() {

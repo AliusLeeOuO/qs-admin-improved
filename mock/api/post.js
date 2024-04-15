@@ -8,7 +8,7 @@ const posts = [
     isRecommend: true,
     isPublish: true,
     createDate: '2021-11-04T04:03:36.000Z',
-    updateDate: '2021-11-04T04:03:36.000Z',
+    updateDate: '2021-11-04T04:03:36.000Z'
   },
   {
     title: 'Vue2&Vue3项目风格指南',
@@ -19,7 +19,7 @@ const posts = [
     isRecommend: true,
     isPublish: true,
     createDate: '2021-10-25T08:57:47.000Z',
-    updateDate: '2022-02-28T04:02:39.000Z',
+    updateDate: '2022-02-28T04:02:39.000Z'
   },
   {
     title: '如何优雅的给图片添加水印',
@@ -30,7 +30,7 @@ const posts = [
     isRecommend: true,
     isPublish: true,
     createDate: '2021-06-24T18:46:19.000Z',
-    updateDate: '2021-09-23T07:51:22.000Z',
+    updateDate: '2021-09-23T07:51:22.000Z'
   },
 
   {
@@ -42,7 +42,7 @@ const posts = [
     isRecommend: true,
     isPublish: true,
     createDate: '2021-06-10T18:51:19.000Z',
-    updateDate: '2021-09-17T09:33:24.000Z',
+    updateDate: '2021-09-17T09:33:24.000Z'
   },
   {
     title: 'Promise的五个静态方法',
@@ -53,8 +53,8 @@ const posts = [
     isRecommend: true,
     isPublish: true,
     createDate: '2021-02-22T22:37:06.000Z',
-    updateDate: '2021-09-17T09:33:24.000Z',
-  },
+    updateDate: '2021-09-17T09:33:24.000Z'
+  }
 ]
 
 export default [
@@ -76,7 +76,7 @@ export default [
         }
         pageData = pageData.map((item, index) => ({
           id: pageSize * (pageNo - 1) + index + 1,
-          ...item,
+          ...item
         }))
       }
       else {
@@ -89,10 +89,10 @@ export default [
           pageData,
           total,
           pageNo,
-          pageSize,
-        },
+          pageSize
+        }
       }
-    },
+    }
   },
   {
     url: '/api/post',
@@ -101,9 +101,9 @@ export default [
       return {
         code: 0,
         message: 'ok',
-        data: body,
+        data: body
       }
-    },
+    }
   },
   {
     url: '/api/post/:id',
@@ -114,10 +114,10 @@ export default [
         message: 'ok',
         data: {
           id: query.id,
-          body,
-        },
+          body
+        }
       }
-    },
+    }
   },
   {
     url: '/api/post/:id',
@@ -127,9 +127,9 @@ export default [
         code: 0,
         message: 'ok',
         data: {
-          id: query.id,
-        },
+          id: query.id
+        }
       }
-    },
-  },
+    }
+  }
 ]

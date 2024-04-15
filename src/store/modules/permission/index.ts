@@ -6,7 +6,7 @@ import type { RoutesType } from '~/types/router'
 export const usePermissionStore = defineStore('permission', {
   state() {
     return {
-      accessRoutes: <RoutesType> [],
+      accessRoutes: <RoutesType> []
     }
   },
   getters: {
@@ -15,7 +15,7 @@ export const usePermissionStore = defineStore('permission', {
     },
     menus(): RoutesType {
       return this.routes.filter(route => route.name && !route.isHidden)
-    },
+    }
   },
   actions: {
     generateRoutes(role: Array<string> = []): RoutesType {
@@ -25,6 +25,6 @@ export const usePermissionStore = defineStore('permission', {
     },
     resetPermission() {
       this.$reset()
-    },
-  },
+    }
+  }
 })

@@ -21,14 +21,14 @@ const {
   handleView,
   handleSave,
   modalForm,
-  modalFormRef,
+  modalFormRef
 } = useCRUD({
   name: '文章',
   initForm: { author: '大脸怪' },
   doCreate: api.addPost,
   doDelete: api.deletePost,
   doUpdate: api.updatePost,
-  refresh: () => $table.value?.handleSearch(),
+  refresh: () => $table.value?.handleSearch()
 })
 
 const columns: any = [
@@ -45,9 +45,9 @@ const columns: any = [
         rubberBand: false,
         value: row.isPublish,
         loading: !!row.publishing,
-        onUpdateValue: () => handlePublish(row),
+        onUpdateValue: () => handlePublish(row)
       })
-    },
+    }
   },
   { title: '标题', key: 'title', width: 150, ellipsis: { tooltip: true } },
   { title: '分类', key: 'category', width: 80, ellipsis: { tooltip: true } },
@@ -58,7 +58,7 @@ const columns: any = [
     width: 150,
     render(row: any) {
       return h('span', formatDateTime(row.createDate))
-    },
+    }
   },
   {
     title: '最后更新时间',
@@ -66,7 +66,7 @@ const columns: any = [
     width: 150,
     render(row: any) {
       return h('span', formatDateTime(row.updateDate))
-    },
+    }
   },
   {
     title: '操作',
@@ -83,9 +83,9 @@ const columns: any = [
             size: 'small',
             type: 'primary',
             secondary: true,
-            onClick: () => handleView(row),
+            onClick: () => handleView(row)
           },
-          { default: () => '查看', icon: renderIcon('majesticons:eye-line', { size: 14 }) },
+          { default: () => '查看', icon: renderIcon('majesticons:eye-line', { size: 14 }) }
         ),
         h(
           NButton,
@@ -93,9 +93,9 @@ const columns: any = [
             size: 'small',
             type: 'primary',
             style: 'margin-left: 15px;',
-            onClick: () => handleEdit(row),
+            onClick: () => handleEdit(row)
           },
-          { default: () => '编辑', icon: renderIcon('material-symbols:edit-outline', { size: 14 }) },
+          { default: () => '编辑', icon: renderIcon('material-symbols:edit-outline', { size: 14 }) }
         ),
 
         h(
@@ -104,13 +104,13 @@ const columns: any = [
             size: 'small',
             type: 'error',
             style: 'margin-left: 15px;',
-            onClick: () => handleDelete(row.id),
+            onClick: () => handleDelete(row.id)
           },
-          { default: () => '删除', icon: renderIcon('material-symbols:delete-outline', { size: 14 }) },
-        ),
+          { default: () => '删除', icon: renderIcon('material-symbols:delete-outline', { size: 14 }) }
+        )
       ]
-    },
-  },
+    }
+  }
 ]
 
 // 选中事件
@@ -165,7 +165,7 @@ onMounted(() => {
             v-model:value="queryItems.title"
             type="text"
             placeholder="请输入标题"
-            @keydown.enter="$table?.handleSearch"
+            @keydown.enter="() => $table.handleSearch()"
           />
         </QueryBarItem>
       </template>

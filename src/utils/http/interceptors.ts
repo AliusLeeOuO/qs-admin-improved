@@ -14,7 +14,7 @@ export function reqResolve(config: RequestConfig) {
     return Promise.reject(new AxiosRejectError({ code: 401, message: '登录已过期，请重新登录！' }))
 
   /**
-   * * 加上 token
+   * 加上 token
    * ! 认证方案: JWT Bearer
    */
   const Authorization = config.headers?.Authorization || `Bearer ${token}`

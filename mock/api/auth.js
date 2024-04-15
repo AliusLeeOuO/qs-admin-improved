@@ -2,7 +2,7 @@ import { resolveToken } from '../utils'
 
 const token = {
   admin: 'admin',
-  editor: 'editor',
+  editor: 'editor'
 }
 
 export default [
@@ -15,17 +15,17 @@ export default [
         return {
           code: 0,
           data: {
-            token: token[name],
-          },
+            token: token[name]
+          }
         }
       }
       else {
         return {
           code: -1,
-          message: '没有此用户',
+          message: '没有此用户'
         }
       }
-    },
+    }
   },
   {
     url: '/api/auth/refreshToken',
@@ -34,9 +34,9 @@ export default [
       return {
         code: 0,
         data: {
-          token: resolveToken(headers?.authorization),
-        },
+          token: resolveToken(headers?.authorization)
+        }
       }
-    },
-  },
+    }
+  }
 ]

@@ -13,7 +13,7 @@ export const useTabStore = defineStore('tab', {
   state() {
     return {
       tabs: <Array<TabItem>> tabs || [],
-      activeTab: <string> activeTab || '',
+      activeTab: <string> activeTab || ''
     }
   },
   actions: {
@@ -64,6 +64,6 @@ export const useTabStore = defineStore('tab', {
     resetTabs() {
       this.setTabs([])
       this.setActiveTab('')
-    },
-  },
+    }
+  }
 })
